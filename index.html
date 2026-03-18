@@ -10,12 +10,6 @@
 </head>
 <body class="lang-ja">
 
-  <!-- 言語切替 -->
-  <div class="lang-switcher">
-    <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-  </div>
-
   <!-- ナビゲーション -->
   <nav>
     <div class="nav-inner">
@@ -24,7 +18,23 @@
         <li><a href="#howto"><span class="ja">機能紹介</span><span class="en">Features</span></a></li>
         <li><a href="#qa"><span class="ja">Q&amp;A</span><span class="en">Q&amp;A</span></a></li>
         <li><a href="#contact"><span class="ja">問い合わせ</span><span class="en">Contact</span></a></li>
+        <!-- 言語切替（スマホメニュー内に表示） -->
+        <li class="lang-switcher-item">
+          <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+          </div>
+        </li>
       </ul>
+      <!-- 言語切替（デスクトップのみ表示） -->
+      <div class="lang-switcher lang-switcher-desktop">
+        <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <!-- ハンバーガーボタン（スマホのみ表示・一番右） -->
+      <button class="nav-hamburger" aria-label="メニュー" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -73,12 +83,20 @@
       </div>
     </div>
 
-    <!-- スクリーンショット挿入場所 -->
-    <div class="screenshot-note">
-      <strong class="ja">📸 スクリーンショット</strong>
-      <strong class="en">📸 Screenshots</strong>
-      <span class="ja">ここにアプリのスクリーンショットを追加してください。<br><code>&lt;img&gt;</code> タグで差し替えられます。</span>
-      <span class="en">Add your app screenshots here.<br>Replace this with <code>&lt;img&gt;</code> tags.</span>
+    <!-- スクリーンショットカルーセル -->
+    <div class="screenshot-carousel">
+      <div class="screenshot-track">
+        <img src="images/screenshots/1.png" alt="アプリスクリーンショット 1" loading="lazy">
+        <img src="images/screenshots/2.png" alt="アプリスクリーンショット 2" loading="lazy">
+        <img src="images/screenshots/3.png" alt="アプリスクリーンショット 3" loading="lazy">
+        <img src="images/screenshots/4.png" alt="アプリスクリーンショット 4" loading="lazy">
+      </div>
+      <div class="screenshot-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
   </section>
 
@@ -143,7 +161,7 @@
 
   <!-- フッター -->
   <footer>
-    <p>© 2026 はたけ日和. All rights reserved.</p>
+    <p>© 2026 Konishi Lab. All rights reserved.</p>
     <p style="margin-top: 8px;"><a href="privacy.html" class="footer-link">プライバシーポリシー</a></p>
   </footer>
 
