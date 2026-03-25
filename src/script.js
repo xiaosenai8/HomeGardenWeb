@@ -3,24 +3,24 @@ function toggleNav() {
   document.querySelector('nav').classList.toggle('nav-open');
 }
 
-/* ===== 言語切替 ===== */
-function setLang(lang) {
-  document.body.className = 'lang-' + lang;
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.trim().toLowerCase().startsWith(lang === 'ja' ? '日' : 'en'));
-  });
-  document.documentElement.lang = lang === 'ja' ? 'ja' : 'en';
-}
 
 /* ===== スクリーンショットカルーセル（1枚表示・スワイプ／ドラッグ対応） ===== */
 (function () {
   const carousel = document.querySelector('.screenshot-carousel');
   const track = document.querySelector('.screenshot-track');
   const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.carousel-btn--prev');
+  const nextBtn = document.querySelector('.carousel-btn--next');
   if (!carousel || !track) return;
 
   const imgs = track.querySelectorAll('img');
   let currentIndex = 0;
+
+  // ナビボタンの表示状態を更新する
+  function updateButtons() {
+    if (prevBtn) prevBtn.classList.toggle('hidden', currentIndex === 0);
+    if (nextBtn) nextBtn.classList.toggle('hidden', currentIndex === imgs.length - 1);
+  }
 
   // 指定インデックスにスライドしてドットを更新する
   function goTo(index) {
@@ -28,6 +28,7 @@ function setLang(lang) {
     const itemWidth = carousel.offsetWidth;
     track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+    updateButtons();
   }
 
   // タッチ：スワイプまたは左右タップで切り替え
@@ -68,6 +69,10 @@ function setLang(lang) {
       goTo(currentIndex + (clickX < rect.width / 2 ? -1 : 1));
     }
   });
+
+  // 左右ボタンのクリックイベント
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
 
   // 初期化
   goTo(0);

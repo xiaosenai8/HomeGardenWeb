@@ -8,29 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/style.css">
 </head>
-<body class="lang-ja">
+<body>
 
   <!-- ナビゲーション -->
   <nav>
     <div class="nav-inner">
       <a href="#" class="nav-logo">はたけ日和</a>
       <ul class="nav-links">
-        <li><a href="#howto"><span class="ja">機能紹介</span><span class="en">Features</span></a></li>
-        <li><a href="#qa"><span class="ja">Q&amp;A</span><span class="en">Q&amp;A</span></a></li>
-        <li><a href="#contact"><span class="ja">問い合わせ</span><span class="en">Contact</span></a></li>
-        <!-- 言語切替（スマホメニュー内に表示） -->
-        <li class="lang-switcher-item">
-          <div class="lang-switcher">
-            <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
-            <button class="lang-btn" onclick="setLang('en')">EN</button>
-          </div>
-        </li>
+        <li><a href="#howto">機能紹介</a></li>
+        <li><a href="#qa">Q&amp;A</a></li>
+        <li><a href="#contact">問い合わせ</a></li>
       </ul>
-      <!-- 言語切替（デスクトップのみ表示） -->
-      <div class="lang-switcher lang-switcher-desktop">
-        <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-      </div>
       <!-- ハンバーガーボタン（スマホのみ表示・一番右） -->
       <button class="nav-hamburger" aria-label="メニュー" onclick="toggleNav()">
         <span></span><span></span><span></span>
@@ -44,8 +32,7 @@
       <img src="images/icon.png" alt="はたけ日和アイコン" loading="lazy">
     </div>
     <h1>はたけ日和</h1>
-    <p class="hero-tagline ja">家庭菜園をかんたん管理。今日も畑へ。</p>
-    <p class="hero-tagline en">Simple home garden journal for every sunny day.</p>
+    <p class="hero-tagline">家庭菜園をかんたん管理。今日も畑へ。</p>
     <!-- ▼ App Store の URL に差し替えてください ▼ -->
     <a href="https://apps.apple.com/jp/app/id6760701600" class="appstore-btn" target="_blank" rel="noopener noreferrer">
       <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
@@ -54,48 +41,44 @@
 
   <!-- 使い方 -->
   <section id="howto">
-    <p class="section-label ja">Features</p>
-    <p class="section-label en">Features</p>
-    <h2 class="section-title ja">機能紹介</h2>
-    <h2 class="section-title en">Features</h2>
+    <p class="section-label">Features</p>
+    <h2 class="section-title">機能紹介</h2>
 
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">STEP 01</div>
-        <h3 class="ja">作物を登録する</h3>
-        <h3 class="en">Add a Crop</h3>
-        <p class="ja">＋ボタンから育てたい作物を追加。アイコンとカラーを自由に選べます。</p>
-        <p class="en">Tap the + button to add a crop. Choose your favorite icon and color.</p>
+        <h3>作物を登録する</h3>
+        <p>＋ボタンから育てたい作物を追加。アイコンとカラーを自由に選べます。</p>
       </div>
       <div class="step-card">
         <div class="step-num">STEP 02</div>
-        <h3 class="ja">記録をつける</h3>
-        <h3 class="en">Log Your Garden</h3>
-        <p class="ja">水やりや作業内容を記録して、育て方を振り返ることができます。</p>
-        <p class="en">Record watering and tasks to track your gardening progress.</p>
+        <h3>記録をつける</h3>
+        <p>水やりや作業内容を記録して、育て方を振り返ることができます。</p>
       </div>
       <div class="step-card">
         <div class="step-num">STEP 03</div>
-        <h3 class="ja">成長を見守る</h3>
-        <h3 class="en">Watch It Grow</h3>
-        <p class="ja">作物ごとの記録を一覧で確認。成長の様子を楽しんでください。</p>
-        <p class="en">View all records per crop and enjoy watching your plants grow.</p>
+        <h3>成長を見守る</h3>
+        <p>作物ごとの記録を一覧で確認。成長の様子を楽しんでください。</p>
       </div>
     </div>
 
     <!-- スクリーンショットカルーセル -->
-    <div class="screenshot-carousel">
-      <div class="screenshot-track">
-        <img src="images/screenshots/1.png" alt="アプリスクリーンショット 1" loading="lazy">
-        <img src="images/screenshots/2.png" alt="アプリスクリーンショット 2" loading="lazy">
-        <img src="images/screenshots/3.png" alt="アプリスクリーンショット 3" loading="lazy">
-        <img src="images/screenshots/4.png" alt="アプリスクリーンショット 4" loading="lazy">
-      </div>
-      <div class="screenshot-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    <div class="screenshot-wrapper">
+      <div class="screenshot-carousel">
+        <button class="carousel-btn carousel-btn--prev" aria-label="前へ">&#8249;</button>
+        <button class="carousel-btn carousel-btn--next" aria-label="次へ">&#8250;</button>
+        <div class="screenshot-track">
+          <img src="images/screenshots/1.png" alt="アプリスクリーンショット 1" loading="lazy">
+          <img src="images/screenshots/2.png" alt="アプリスクリーンショット 2" loading="lazy">
+          <img src="images/screenshots/3.png" alt="アプリスクリーンショット 3" loading="lazy">
+          <img src="images/screenshots/4.png" alt="アプリスクリーンショット 4" loading="lazy">
+        </div>
+        <div class="screenshot-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -105,37 +88,28 @@
   <!-- Q&A -->
   <section id="qa">
     <p class="section-label">Q &amp; A</p>
-    <h2 class="section-title ja">よくある質問</h2>
-    <h2 class="section-title en">Frequently Asked Questions</h2>
+    <h2 class="section-title">よくある質問</h2>
 
     <div class="qa-list">
 
       <div class="qa-item">
-        <button class="qa-question ja" onclick="toggleQA(this)">無料で使えますか？</button>
-        <button class="qa-question en" onclick="toggleQA(this)">Is the app free to use?</button>
-        <div class="qa-answer ja">はい、無料でご利用いただけます。</div>
-        <div class="qa-answer en">Yes, the app is completely free.</div>
+        <button class="qa-question" onclick="toggleQA(this)">無料で使えますか？</button>
+        <div class="qa-answer">はい、無料でご利用いただけます。</div>
       </div>
 
       <div class="qa-item">
-        <button class="qa-question ja" onclick="toggleQA(this)">対応しているiOSバージョンは？</button>
-        <button class="qa-question en" onclick="toggleQA(this)">What iOS versions are supported?</button>
-        <div class="qa-answer ja">iOS 17以降に対応しています。</div>
-        <div class="qa-answer en">HomeGarden requires iOS 17 or later.</div>
+        <button class="qa-question" onclick="toggleQA(this)">対応しているiOSバージョンは？</button>
+        <div class="qa-answer">iOS 17以降に対応しています。</div>
       </div>
 
       <div class="qa-item">
-        <button class="qa-question ja" onclick="toggleQA(this)">データはどこに保存されますか？</button>
-        <button class="qa-question en" onclick="toggleQA(this)">Where is my data stored?</button>
-        <div class="qa-answer ja">データはお使いのデバイス内にのみ保存されます。外部サーバーへの送信はありません。</div>
-        <div class="qa-answer en">All data is stored locally on your device. Nothing is sent to external servers.</div>
+        <button class="qa-question" onclick="toggleQA(this)">データはどこに保存されますか？</button>
+        <div class="qa-answer">データはお使いのデバイス内にのみ保存されます。外部サーバーへの送信はありません。</div>
       </div>
 
       <div class="qa-item">
-        <button class="qa-question ja" onclick="toggleQA(this)">iPad でも使えますか？</button>
-        <button class="qa-question en" onclick="toggleQA(this)">Can I use it on iPad?</button>
-        <div class="qa-answer ja">現在はiPhone向けに最適化されています。iPad対応は今後のアップデートで検討中です。</div>
-        <div class="qa-answer en">Currently optimized for iPhone. iPad support is being considered for a future update.</div>
+        <button class="qa-question" onclick="toggleQA(this)">iPad でも使えますか？</button>
+        <div class="qa-answer">現在はiPhone向けに最適化されています。iPad対応は今後のアップデートで検討中です。</div>
       </div>
 
     </div>
@@ -147,14 +121,11 @@
   <section id="contact">
     <div class="contact-box">
       <p class="section-label">Contact</p>
-      <h2 class="section-title ja">お問い合わせ</h2>
-      <h2 class="section-title en">Get in Touch</h2>
-      <p class="ja">ご意見・ご要望・不具合のご報告はこちらからお気軽にどうぞ。</p>
-      <p class="en">Have feedback, a request, or found a bug? Feel free to reach out.</p>
+      <h2 class="section-title">お問い合わせ</h2>
+      <p>ご意見・ご要望・不具合のご報告はこちらからお気軽にどうぞ。</p>
       <!-- ▼ Google フォームのURLに差し替えてください ▼ -->
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4yqI40snKycwmUbcqbCMmJKkTAy4T33C1d7pGYX413HEjDw/viewform?usp=header" class="contact-btn">
-        <span class="ja">フォームを開く</span>
-        <span class="en">Open Form</span>
+        フォームを開く
       </a>
     </div>
   </section>
